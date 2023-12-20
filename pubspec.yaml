@@ -93,10 +93,10 @@ flutter:
   fonts:
     - family: Mulish
       fonts:
-        - asset: assets/fonts/mulish/Mulish.ttf
-        - asset: assets/fonts/mulish/Mulish-bold.ttf
+        - asset: assets/fonts/muli/Mulish-Regular.ttf
+        - asset: assets/fonts/muli/Mulish-bold.ttf
           weight: 700
-        - asset: assets/fonts/mulish/Mulish-Regular.ttf
+        - asset: assets/fonts/muli/Mulish-Light.ttf
           weight: 300
 
   # To add assets to your application, add an assets section, like this:

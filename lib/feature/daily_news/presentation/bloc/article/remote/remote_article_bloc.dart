@@ -4,7 +4,8 @@ import 'package:clean_arctheture/feature/daily_news/presentation/bloc/article/re
 import 'package:clean_arctheture/feature/daily_news/presentation/bloc/article/remote/remote_article_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class RemoteArticlesBloc extends Bloc<RemoteArticleEvent, RemoteArticlesState> {
+class RemoteArticlesBloc
+    extends Bloc<RemoteArticlesEvent, RemoteArticlesState> {
   final GetArticleUseCase _getArticleUseCase;
 
   RemoteArticlesBloc(this._getArticleUseCase)
@@ -16,16 +17,12 @@ class RemoteArticlesBloc extends Bloc<RemoteArticleEvent, RemoteArticlesState> {
       GetArticles event, Emitter<RemoteArticlesState> emit) async {
     final dataState = await _getArticleUseCase();
 
-    if (dataState is DataSucess && dataState.data!.isNotEmpty) {
-      emit(
-        RemoteArticlesDone(dataState.data!),
-      );
+    if (dataState is DataSuccess && dataState.data!.isNotEmpty) {
+      emit(RemoteArticlesDone(dataState.data!));
     }
 
     if (dataState is DataFailed) {
-      emit(
-        RemoteArticlesError(dataState.error!),
-      );
+      emit(RemoteArticlesError(dataState.error!));
     }
   }
 }
